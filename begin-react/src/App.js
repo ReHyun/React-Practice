@@ -68,12 +68,9 @@ function App() {
     );
   }, []);
 
-  const onToggle = useCallback(
-    (id) => {
-      setUsers(users.map((user) => (user.id === id ? { ...user, active: !user.active } : user)));
-    },
-    []
-  );
+  const onToggle = useCallback((id) => {
+    setUsers(users.map((user) => (user.id === id ? { ...user, active: !user.active } : user)));
+  }, []);
   const count = useMemo(() => countActiveUsers(users), [users]);
   return (
     <>
