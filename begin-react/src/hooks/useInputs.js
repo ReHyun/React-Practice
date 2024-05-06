@@ -20,18 +20,12 @@ function reducer(state, action) {
 function useInputs(initialForm) {
   const [form, dispatch] = useReducer(reducer, initialForm);
 
-  // change
-  // const onChange = useCallback((e) => {
-  //   const { name, value } = e.target;
-  //   setForm((form) => ({ ...form, [name]: value }));
-  // }, []);
-
   const onChange = useCallback((e) => {
     const { name, value } = e.target;
     dispatch({ type: 'CHANGE', name, value });
   }, []);
 
-  const reset = useCallback(() => dispatch({ type: 'RESET' }));
+  const reset = () => dispatch({ type: 'RESET' });
 
   return [form, onChange, reset];
 }
