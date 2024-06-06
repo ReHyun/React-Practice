@@ -30,11 +30,11 @@ function TodoHead() {
   const todos = useTodoState();
   const undoneTasks = todos.filter((todo) => !todo.done);
 
-  const today = new Date();
+  const today = new Date(); // 날짜 객체 생성
   const dateString = today.toLocaleDateString('ko-KR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+    year: 'numeric', // 2024년 형태로 나타냄
+    month: 'long',   //6월 형태로 나타냄
+    day: 'numeric',  // 6일 형태로 나타냄
   });
   const dayName = today.toLocaleDateString('ko-KR', { weekday: 'long' });
   return (
